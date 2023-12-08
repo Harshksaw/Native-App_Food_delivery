@@ -42,6 +42,7 @@ export const featured = {
             id: 1,
             name: 'Papa Johns',
             image: require('../assets/restaurants/pizzaZone.png'),
+
             description: 'Hot and spicy pizzas',
             lng: -85.5324269,
             lat: 38.2145602,
@@ -62,14 +63,14 @@ export const featured = {
                     name: 'pizza',
                     description: 'cheezy garlic pizza',
                     price: 10,
-                    image: require('../assets/dishes/download (2) (1).jpeg')
+                    image: require('../assets/restaurants/download3.png')
                 },
                 {
                     id: 3,
                     name: 'pizza',
                     description: 'cheezy garlic pizza',
                     price: 10,
-                    image: require('../assets/dishes/download (2) (1).jpeg')
+                    image: require('../assets/restaurants/download3.png')
                 },
             ]
 

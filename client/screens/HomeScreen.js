@@ -8,6 +8,7 @@ import { themeColors } from '../theme/index';
 import Categories from '../components/categories';
 import FeaturedRow from '../components/featuredRow';
 import { featured } from '../constants';
+import { Image } from 'react-native-web';
 
 export default function HomeScreen() {
     return (
@@ -29,20 +30,17 @@ export default function HomeScreen() {
                 </View>
             </View>
 
+         
 
             <ScrollView showsVerticalScrollIndicator={false}
                 contentContainerStyle={{
                     paddingBottom: 20
                 }}>
 
-
-                {/* <Categories /> */}
-
-                {/* Featured */}
-
                 <View className="mt-4">
                     {
                         [featured, featured, featured].map((item, idx) => {
+
                             return (
 
                                 <FeaturedRow item={item} key={idx} title={item.title}
@@ -52,8 +50,6 @@ export default function HomeScreen() {
                     }
 
                 </View>
-
-
             </ScrollView>
 
         </SafeAreaView>
