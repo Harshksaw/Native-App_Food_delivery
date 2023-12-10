@@ -1,9 +1,9 @@
 import React from 'react';
 import { View, Text, TouchableOpacity, ScrollView } from 'react-native';
 import { themeColors } from '../theme';
-import ResturantCard from './resturantCard';
+import RestaurantCard from './restaurantCard';
 
-export default function FeaturedRow({title, description, resturants}) {
+export default function FeaturedRow({title, description, restaurants}) {
     return (
         <View>
             <View className=" flex-row justify-between items-center px-4">
@@ -27,10 +27,10 @@ export default function FeaturedRow({title, description, resturants}) {
                 className="overflow-visible py-5"
             >
                 {
-                    resturants.map((resturant, index) => {
+                    restaurants.map((restaurant, index) => {
                         return (
-                            <ResturantCard
-                                item={resturant}
+                            <RestaurantCard
+                                item={restaurant}
                                 key={index}
 
                             />

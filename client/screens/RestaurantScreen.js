@@ -1,4 +1,4 @@
-import { View, Text, ScrollView, TouchableOpacity, Image } from "react-native";
+import { View, Text, ScrollView, TouchableOpacity, Image, StatusBar } from "react-native";
 import React from "react";
 import * as Icon from "react-native-feather";
 
@@ -8,7 +8,7 @@ import { themeColors } from "../theme";
 import DishRow from "../components/dishRow";
 import CartIcon from "../components/cartIcon";
 
-export default function ResturantScreen() {
+export default function RestaurantScreen() {
   const { params } = useRoute();
   const navigation = useNavigation();
 
@@ -19,6 +19,8 @@ export default function ResturantScreen() {
   return (
     <View>
       <CartIcon/>
+      <StatusBar style="light"/>
+      
       
       <ScrollView>
         <View className="relative">
@@ -63,8 +65,8 @@ export default function ResturantScreen() {
         <View className="pb-36 bg-gray-300">
           <Text className="px-4 py-4 text-2xl font-bold">Menu</Text>
             {
-              item.dishes.map((dish) => (
-                <DishRow item={dish} />
+              item.dishes.map((dish, idx) => (
+                <DishRow item={dish} key={idx}/>
               ))
             }
 

@@ -37,7 +37,7 @@ export const featured = {
     id: 1,
     title: 'Hot and Spicy',
     description: 'soft and tender fried chicken',
-    resturants: [
+    restaurants: [
         {
             id: 1,
             name: 'Papa Johns',
