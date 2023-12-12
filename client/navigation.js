@@ -9,7 +9,9 @@ import HomeScreen from './screens/HomeScreen'
 import RestaurantScreen from './screens/RestaurantScreen'
 
 import OrderPreparingScreen from './screens/OrderPreparingScreen';
-import CartScreen from './screens/CartScreen';
+import CartScreen from './screens/cartScreen';
+import DeliveryScreen from './screens/DeliveryScreen';
+
 
 
 
@@ -28,6 +30,7 @@ export default function Navigation() {
       <Stack.Screen name="Restaurant" component={RestaurantScreen} />
       <Stack.Screen name="Cart" options={{presentation:'modal'}} component={CartScreen} />
       <Stack.Screen name="OrderPreparing" options={{presentation:'fullScreenModal'}} component={OrderPreparingScreen} />
+      <Stack.Screen name="DeliveryScreen" options={{presentation:'fullScreenModal'}} component={DeliveryScreen} />
       
     </Stack.Navigator>
     </NavigationContainer>
