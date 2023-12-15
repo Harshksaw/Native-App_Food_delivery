@@ -5,11 +5,13 @@ import { useNavigation } from "@react-navigation/native";
 import MapView, { Marker } from "react-native-maps";
 import { themeColors } from "../theme";
 import { Image } from "react-native";
-
+import { selectRestaurant } from "../redux/slices/restaurantSlice";
 import * as Icon from "react-native-feather";
+import {useSelector } from "react-redux"
 export default function DeliveryScreen() {
-  const restaurant = featured.restaurants[0];
+  const restaurant = useSelector(selectRestaurant)
   const navigation = useNavigation();
+  
 
   return (
     <View className="flex-1">
@@ -28,14 +30,14 @@ export default function DeliveryScreen() {
             latitude: restaurant.lat,
             longitude: restaurant.lng,
           }}
-          title={restaurant.title}
+          title={restaurant.name}
           description={restaurant.description}
           pinColor={themeColors.bgColor(1)}
         />
       </MapView>
 
       <View className="rounded-t-3xl -mt-12 bg-white relative">
-        <TouchableOpacity className="absolute right-4 top-2"></TouchableOpacity>
+        {/* <TouchableOpacity className="absolute right-4 top-2"></TouchableOpacity> */}
         <View className="flex-row justify-between px-5 pt-10">
           <View>
             <Text className="text-lg text-gray-700 font-semibold">
