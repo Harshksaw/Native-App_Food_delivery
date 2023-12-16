@@ -1,17 +1,23 @@
-import React from "react";
-import { View, Text, TouchableOpacity } from "react-native";
-import { featured } from "../constants";
-import { useNavigation } from "@react-navigation/native";
-import MapView, { Marker } from "react-native-maps";
-import { themeColors } from "../theme";
-import { Image } from "react-native";
-import { selectRestaurant } from "../redux/slices/restaurantSlice";
 import * as Icon from "react-native-feather";
-import {useSelector } from "react-redux"
+
+import { Image, Text, TouchableOpacity, View } from "react-native";
+import MapView, { Marker } from "react-native-maps";
+import { useDispatch, useSelector } from "react-redux";
+
+import { emptyCart } from "../redux/slices/cartSlice";
+import { selectRestaurant } from "../redux/slices/restaurantSlice";
+import { themeColors } from "../theme";
+import { useNavigation } from "@react-navigation/native";
+
 export default function DeliveryScreen() {
   const restaurant = useSelector(selectRestaurant)
   const navigation = useNavigation();
+  const dispatch = useDispatch();
   
+  const cancelOrder = ()=>{
+    dispatch(emptyCart())
+    navigation.navigate("Home")
+  }
 
   return (
     <View className="flex-1">
@@ -86,7 +92,7 @@ export default function DeliveryScreen() {
 
             <TouchableOpacity
               className="bg-white p-2 rounded-full"
-              onPress={() => navigation.navigate("Home")}
+              onPress={cancelOrder}
             >
               <Icon.X stroke={"red"} strokeWidth="5" />
             </TouchableOpacity>
