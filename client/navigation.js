@@ -1,21 +1,16 @@
 // In App.js in a new project
 
 import * as React from 'react';
-import { View, Text } from 'react-native';
-import { NavigationContainer } from '@react-navigation/native';
-import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
-import HomeScreen from './screens/HomeScreen'
-import RestaurantScreen from './screens/RestaurantScreen'
+import { Text, View } from 'react-native';
 
-import OrderPreparingScreen from './screens/OrderPreparingScreen';
-import CartScreen from './screens/cartScreen';
+import CartScreen from './screens/CartScreen';
 import DeliveryScreen from './screens/DeliveryScreen';
-
-
-
-
-
+import HomeScreen from './screens/HomeScreen'
+import { NavigationContainer } from '@react-navigation/native';
+import OrderPreparingScreen from './screens/OrderPreparingScreen';
+import RestaurantScreen from './screens/RestaurantScreen'
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
 const Stack = createNativeStackNavigator();
 

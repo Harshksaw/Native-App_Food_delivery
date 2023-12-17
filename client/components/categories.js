@@ -1,10 +1,20 @@
-import React, { useState } from 'react';
-import { View, Text, ScrollView, TouchableOpacity, Image } from 'react-native';
+import { Image, ScrollView, Text, TouchableOpacity, View } from 'react-native';
+import React, { useEffect, useState } from 'react';
+
 import { categories } from '../constants/index';
 
 export default function Categories() {
 
     const [activeCategory, setActiveCategory] = useState(null)
+    
+    // useEffect(()=>{
+    //     getCategories().then(data=>{
+    //         // console.log('got data' , data[0]);
+    //         setCategories
+    //     })
+    // })
+
+    
     return (
         <View className="mt-4">
             <ScrollView horizontal showsHorizontalScrollIndicator={false} className="overflow-visible" contentContainerStyle={{
