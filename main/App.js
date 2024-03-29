@@ -8,8 +8,15 @@ import * as SplashScreen from "expo-splash-screen";
 import * as Location from 'expo-location';
 import BottomTab from './app/navigation/BottomTab';
 const Stack = createNativeStackNavigator();
+import { UserReversedGeoCode } from './app/context/UserReversedGeoCode';
+import { UserLocationContext } from './app/context/UserLocationContext'
+
+
 export default function App() {
-  
+  const [location, setLocation] = useState(null);
+  const [address, setAddress] = useState(null);
+  const [error, setError] = useState(null);
+
   const defaultAddresss = { "city": "Shanghai", "country": "China", "district": "Pudong", "isoCountryCode": "CN", "name": "33 East Nanjing Rd", "postalCode": "94108", "region": "SH", "street": "Stockton St", "streetNumber": "1", "subregion": "San Francisco County", "timezone": "America/Los_Angeles" }
   const [fontsLoaded] = useFonts({
     regular: require('./assets/fonts/Poppins-Regular.ttf'),
@@ -32,15 +39,42 @@ export default function App() {
     return;
   }
 
+  useEffect(() => {
+    (
+      async()=>{
+
+        setAddress(defaultAddresss)
+        let {status} = await Location.requestBackgroundPermissionsAsync();
+        if(status  !== 'granted'){
+          setError('Permission to Access location as denied')
+          return;
+        }
+        let location = await Location.getCurrentPositionAsync({});
+        setLocation(location);
+
+      }
+    )();
+
+  }, [])
+
+
+
+  
   return (
-    <NavigationContainer>
-      <Stack.Navigator>
-        <Stack.Screen
-          name='bottom-navigation'
-          component={BottomTab}
-          options={{ headerShown: false }}
-        />
-      </Stack.Navigator>
-    </NavigationContainer>
+
+    <UserLocationContext.Provider value={{ location, setLocation }}>
+      <UserReversedGeoCode.Provider value={{ address, setAddress }}>
+
+        <NavigationContainer>
+          <Stack.Navigator>
+            <Stack.Screen
+              name='bottom-navigation'
+              component={BottomTab}
+              options={{ headerShown: false }}
+            />
+          </Stack.Navigator>
+        </NavigationContainer>
+      </UserReversedGeoCode.Provider>
+    </UserLocationContext.Provider>
   );
 }
