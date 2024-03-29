@@ -10,10 +10,10 @@ import { UserLocationContext } from "../context/UserLocationContext";
 
 const Home = () => {
 
-  const {address , setAddress} = useContext(UserReversedGeoCode);
-  const {location , setLocation} = useContext(UserLocationContext);
+  // const {address , setAddress} = useContext(UserReversedGeoCode);
+  // const {location , setLocation} = useContext(UserLocationContext);
 
-  console.log(address);
+  // console.log(address);
   
   return (
     <SafeAreaView>
