@@ -1,4 +1,4 @@
-import { StyleSheet, Text, View } from "react-native";
+import { ScrollView, StyleSheet, Text, View } from "react-native";
 import React, { useContext } from "react";
 import { COLORS, SIZES } from "../constants/theme";
 import { SafeAreaView } from "react-native-safe-area-context";
@@ -23,6 +23,12 @@ const Home = () => {
         <View style={pages.viewTwo}>
 
         <HomeHeader/>
+
+        <ScrollView style={{borderBottomEndRadius : 30, borderBottomLeftRadius : 30}}
+         showsVerticalScrollIndicator>
+          
+
+        </ScrollView>
         </View>
       </View>
     </SafeAreaView>
