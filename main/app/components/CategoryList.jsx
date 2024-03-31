@@ -1,6 +1,7 @@
 import { FlatList, StyleSheet, Text, TouchableOpacity, View } from 'react-native'
 import React, { useState } from 'react'
 import uidata from '../constants/uidata'
+import CategoryItem from './CategoryItem'
 
 
 const CategoryList = ({setSelectedCategory ,setSelectedSelection, setSelectedValue }) => {
@@ -16,6 +17,7 @@ const categories = [1,2,3,4,5];
     keyExtractor={(item)=> item._id}
     renderItem={({item}) => <TouchableOpacity>
         
+        <CategoryItem selected={selected}  category={item}/>
     </TouchableOpacity>}
     />
 
