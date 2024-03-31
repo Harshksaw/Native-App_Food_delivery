@@ -1,4 +1,4 @@
-import { StyleSheet, Text, View } from "react-native";
+import { ScrollView, StyleSheet, Text, View } from "react-native";
 import React, { useContext } from "react";
 import { COLORS, SIZES } from "../constants/theme";
 import { SafeAreaView } from "react-native-safe-area-context";
@@ -7,6 +7,7 @@ import uidata from "../constants/uidata";
 
 import { UserReversedGeoCode } from "../context/UserReversedGeoCode";
 import { UserLocationContext } from "../context/UserLocationContext";
+import HomeHeader from "../components/HomeHeader";
 
 const Home = () => {
 
@@ -14,13 +15,20 @@ const Home = () => {
   // const {location , setLocation} = useContext(UserLocationContext);
 
   // console.log(address);
+  // console.log(location);
   
   return (
     <SafeAreaView>
       <View style={pages.viewOne}>
         <View style={pages.viewTwo}>
 
+        <HomeHeader/>
 
+        <ScrollView style={{borderBottomEndRadius : 30, borderBottomLeftRadius : 30}}
+         showsVerticalScrollIndicator>
+          
+
+        </ScrollView>
         </View>
       </View>
     </SafeAreaView>
