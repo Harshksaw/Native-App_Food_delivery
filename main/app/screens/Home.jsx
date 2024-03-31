@@ -9,13 +9,14 @@ import { UserReversedGeoCode } from "../context/UserReversedGeoCode";
 import { UserLocationContext } from "../context/UserLocationContext";
 import HomeHeader from "../components/HomeHeader";
 import CategoryList from "../components/CategoryList";
+import ChoicesList from "../components/ChoicesList";
 
 const Home = () => {
 
   
-  const [setSelectedCategory, setSelectedCategory] = useState(null);
-  const [setSelectedSelection, setSelectedSelection] = useState(null);
-  const [setSelectedValue, setSelectedValue] = useState(null);
+  const [SelectedCategory, setSelectedCategory] = useState(null);
+  const [SelectedSelection, setSelectedSelection] = useState(null);
+  const [SelectedValue, setSelectedValue] = useState(null);
 
   return (
     <SafeAreaView>
@@ -32,6 +33,8 @@ const Home = () => {
         setSelectedValue={setSelectedValue}
         setSelectedSelection={setSelectedSelection}
         />
+
+        <ChoicesList/>
         </ScrollView>
         </View>
       </View>

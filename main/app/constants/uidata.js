@@ -511,4 +511,56 @@ const profile = {
     "updatedAt": "2023-10-24T11:02:28.215Z"
 }
 
+const choiceList=[
+    {
+        id:1,
+        name : "Pick Up",
+        value: "pickup",
+    },
+    {
+        id: 2,
+        name: "Delivery",
+        value: "delivery",
+    },
+    {
+        id: 3,
+        name: "Dine-In",
+        value: "dine-in",
+    },
+    {
+        id: 4,
+        name: "Drive-Thru",
+        value: "drive-thru",
+    },
+    {
+        id: 5,
+        name: "Curbside Pickup",
+        value: "curbside-pickup",
+    },
+    {
+        id: 6,
+        name: "Takeout",
+        value: "takeout",
+    },
+    {
+        id: 7,
+        name: "Catering",
+        value: "catering",
+    },
+    {
+        id: 8,
+        name: "Online Ordering",
+        value: "online-ordering",
+    },
+    {
+        id: 9,
+        name: "Table Reservation",
+        value: "table-reservation",
+    },
+    {
+        id: 10,
+        name: "Food Delivery",
+        value: "food-delivery",
+    }
+]
 export default  {categories, restaurants, foods, cart, profile}
